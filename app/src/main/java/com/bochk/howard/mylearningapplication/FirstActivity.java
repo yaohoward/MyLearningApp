@@ -13,10 +13,54 @@ import android.widget.Toast;
 
 public class FirstActivity extends AppCompatActivity {
 
+    public static final String TAG = "FirstActivity";
+
+    /* P53 活动的生命周期使用
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.d(TAG,"onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(TAG,"onResume");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(TAG,"onPause");
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(TAG,"onStop");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(TAG,"onDestroy");
+    }
+*/
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.d(TAG,"onRestart");
+    }
+
+    /*P53 活动的生命周期*/
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.first_layout);
+
+        Log.d(TAG,"onCreate: " + this.toString());
 
         Button button1 = (Button) findViewById(R.id.button_1);
 
@@ -24,12 +68,12 @@ public class FirstActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                /*p37*/
+                /*p37 在活动中使用Toast*/
 //                Toast.makeText(FirstActivity.this,"You clicked Button 1",Toast.LENGTH_SHORT).show();
-                /*P43*/
+                /*P43 显式Intent*/
 //                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
 //                startActivity(intent);
-                /*P46*/
+                /*P46 隐式Intent*/
 //                Intent intent = new Intent(Intent.ACTION_VIEW);
 //                intent.setData(Uri.parse("http://www.163.com"));
 //                startActivity(intent);
@@ -37,17 +81,52 @@ public class FirstActivity extends AppCompatActivity {
 //                Intent intent = new Intent(Intent.ACTION_DIAL);
 //                intent.setData(Uri.parse("tel:10086"));
 //                startActivity(intent);
-                /*P50*/
+                /*P50 向下一个活动传递数据*/
 //                String data = "Hello, Second Activity";
 //                Intent intent = new Intent(FirstActivity.this, SecondActivity.class);
 //                intent.putExtra("extra_data",data);
 //                startActivity(intent);
-                /*P51*/
+                /*P51 返回数据给上一个活动*/
+//                Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
+//                startActivityForResult(intent,1);
+
+                /*P64 活动的启动模式：1. standard; 2. singleTop 需要修改AndroidManifest.xml*/
+//                Intent intent = new Intent(FirstActivity.this,FirstActivity.class);
+//                startActivity(intent);
+
+                /*P66 singleTop 模式下,firstActivity 不在栈顶时的情况。*/
                 Intent intent = new Intent(FirstActivity.this,SecondActivity.class);
-                startActivityForResult(intent,1);
+                startActivity(intent);
+
+                /*P67 活动的启动模式：3. singleTask 需要修改AndroidManifest.xml,修改onRestart*/
+
+
 
             }
         });
+
+        /*P58 体验活动的生命周期。bengin*/
+        Button startNormalActivity = (Button) findViewById(R.id.start_normal_activity);
+        Button startDialogActivity = (Button) findViewById(R.id.start_dialog_activity);
+
+        startNormalActivity.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this,NormalActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        startDialogActivity.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(FirstActivity.this, DialogActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        /*P58 end*/
+
     }
 
     @Override
@@ -63,6 +142,7 @@ public class FirstActivity extends AppCompatActivity {
         }
     }
 
+    /*P39 在活动中使用menu begin*/
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 //        return super.onCreateOptionsMenu(menu);
@@ -85,4 +165,5 @@ public class FirstActivity extends AppCompatActivity {
         }
         return true;
     }
+    /*P39 在活动中使用menu end*/
 }
