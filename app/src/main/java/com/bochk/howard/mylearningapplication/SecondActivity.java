@@ -7,6 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+/*
+P41.
+ */
 public class SecondActivity extends AppCompatActivity {
 
     @Override

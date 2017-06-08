@@ -3,7 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <!--P56 对话框活动，需要修改Manifest 中的标签android:theme="@style/Theme.AppCompat.Dialog">-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

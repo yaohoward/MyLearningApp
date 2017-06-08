@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--P32 第二章使用的主要layout。-->
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

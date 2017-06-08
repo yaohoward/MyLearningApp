@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+/*
+这是第二章使用的主activity。
+ */
 public class FirstActivity extends AppCompatActivity {
 
     public static final String TAG = "FirstActivity";
@@ -100,8 +103,6 @@ public class FirstActivity extends AppCompatActivity {
 
                 /*P67 活动的启动模式：3. singleTask 需要修改AndroidManifest.xml,修改onRestart*/
 
-
-
             }
         });
 
@@ -129,6 +130,7 @@ public class FirstActivity extends AppCompatActivity {
 
     }
 
+    /*P51 First使用startActivityForResult 方法启动Second，Second被销毁之后回调上一个活动的onActivityResult。
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         switch (requestCode){
@@ -141,6 +143,8 @@ public class FirstActivity extends AppCompatActivity {
             default:
         }
     }
+
+    P51 end*/
 
     /*P39 在活动中使用menu begin*/
     @Override

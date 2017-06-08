@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!--P56 普通活动-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
