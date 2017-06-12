@@ -1,22 +1,16 @@
-package com.bochk.howard.mylearningapplication;
+package com.bochk.howard.mylearningapplication.chap03;
 
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.Toast;
+
+import com.bochk.howard.mylearningapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +18,9 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText editText;
-    private ImageView imageView;
-    private ProgressBar progressBar;
+//    private EditText editText;
+//    private ImageView imageView;
+//    private ProgressBar progressBar;
 
     /*P114
     private String[] data = {"Apple","Banana","Orange","Watermelon","Pear","Grape","Pineapple",
@@ -41,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.linear_layout);
 
         /*P114 begin
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1,data);
@@ -66,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
          /*P117 end*/
 
-        /*P124 RecyclerView begin
+        /*P124 RecyclerView begin*/
         initFruits2();
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
@@ -81,14 +75,14 @@ public class MainActivity extends AppCompatActivity {
          /*P124 end*/
 
 //
-        Button button = (Button) findViewById(R.id.button01);
+//        Button button = (Button) findViewById(R.id.button01);
 //        editText = (EditText) findViewById(R.id.edit_text);
 //        imageView = (ImageView) findViewById(R.id.image_view);
 //        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
 
-        button.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
+//        button.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
 
                 /*P85 EditText begin
                 String inputText = editText.getText().toString();
@@ -134,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
                 progressDialog.setCancelable(true);
                 progressDialog.show();
                 /*P93 ProgessDialog end*/
-            }
-        });
+//            }
+//        });
     }
 
     private void initFruits(){

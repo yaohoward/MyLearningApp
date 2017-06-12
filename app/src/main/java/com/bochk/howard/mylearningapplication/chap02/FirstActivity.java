@@ -1,7 +1,6 @@
-package com.bochk.howard.mylearningapplication;
+package com.bochk.howard.mylearningapplication.chap02;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +9,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.bochk.howard.mylearningapplication.R;
 
 /*
 这是第二章使用的主activity。

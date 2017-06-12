@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bochk.howard.mylearningapplication">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,21 +11,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FirstActivity">
-
-        </activity>
-        <activity android:name=".SecondActivity" />
-        <activity android:name=".NormalActivity" />
+        <activity android:name=".chap02.FirstActivity" />
+        <activity android:name=".chap02.SecondActivity" />
+        <activity android:name=".chap02.NormalActivity" />
         <activity
-            android:name=".DialogActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"></activity>
-        <activity android:name=".MainActivity">
+            android:name=".chap02.DialogActivity"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".chap03.MainActivity" />
+        <activity android:name=".chap05.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".chap05.BootCompleteReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".chap05.MyBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.bochk.howard.mylearningapplication.chap05.MY_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.bochk.howard.mylearningapplication;
+package com.bochk.howard.mylearningapplication.chap02;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.bochk.howard.mylearningapplication.R;
 
 /*
 P41.

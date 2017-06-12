@@ -1,4 +1,4 @@
-package com.bochk.howard.mylearningapplication;
+package com.bochk.howard.mylearningapplication.chap03;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -9,6 +9,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bochk.howard.mylearningapplication.R;
 
 import java.util.List;
 
